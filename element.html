@@ -1,0 +1,90 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>块元素和内联元素</title>
+    <style>
+        img.first{
+            height: auto;
+            width: 30%;
+            padding: 10px;
+            background-color: #1b6d85;
+        }
+        img.second{
+            height: auto;
+            width: 30%;
+            padding: 10px;
+            background-color: red;
+        }
+        img.top{
+            vertical-align: top;
+            width:50px;
+            height: auto;
+        }
+        img.bottom{
+            vertical-align: bottom;
+            width: 50px;
+            height: auto;
+        }
+        p{
+            margin: 0;
+            background-color: #d4d4d4;
+        }
+        a.relative_pos{
+            position:relative;
+            left:100px;
+            top:-100px
+        }
+        p.relative_pos{
+             position:relative;
+             left:100px;
+             top:-100px
+         }
+        div.test_overflow{
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        块元素：</br>
+        例子：h1, p, ul, table
+    </h1>
+    <div>
+        <div style=" margin-bottom: 0px;">
+            <img class="first" src="images/dsc00384.jpg">
+        </div>
+        <div style=" margin-top: 0px;">
+            <img class="second" src="images/dsc00384.jpg">
+        </div>
+        <p>第一段</p>
+        <p>第二段</p>
+    </div>
+    <h1>
+        内联元素：</br>
+        例子：b,td,img,a
+    </h1>
+    <a>www.baidu.com</a><a>www.hupu.com</a>
+    <img class="first" src="images/dsc00384.jpg"><img class="second" src="images/dsc00384.jpg">
+    <p style="background-color: #d4d4d4">fsfsfsdfsdfsdf</p>
+    <div class="test_overflow">
+        <p>div、h1 或 p 元素常常被称为块级元素div、h1 或 p 元素常常被称为块级元素。。<strong style="padding: 30px">这意味着这些元素显示为一块内容，即“块框”。
+        </strong>与之相反，span 和 strong 等元素称为“行内元素”，这是因为它们的内容显示在行中，即“行内框”。</p>
+    </div>
+
+    <img class="second" src="images/dsc00384.jpg">
+    <a class="relative_pos">www.hupu.com</a>
+    <p class="relative_pos">测试相对定位</p>
+    <p class="absolute_pos">测试相对定位</p>
+    <p>
+        这是一幅<img class="top" border="0" src="images/dsc00384.jpg" />位于段落中的图像。
+    </p>
+
+    <p>
+        这是一幅<img class="bottom" border="0" src="images/dsc00384.jpg" />位于段落中的图像。
+    </p>
+
+</body>
+</html>
