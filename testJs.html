@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试js</title>
+    <link rel="icon" href="https://v3.bootcss.com/favicon.ico">
+    <script type="text/javascript">
+        document.write("<h1>Hello World</h1>")
+    </script>
+    <style>
+        button{
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p  id="p" style="border: 1px solid black">Hello 这是第<strong id="times">0</strong>次点这个按钮</p>
+    <p>二进制为<strong id="ntimes">0</strong></p>
+    <script>
+        function out() {
+            //times用以记录按钮被点击的次数)
+            var colors = new Array("red","white",'green','yello','blue')
+            var t = 0;
+            var nt = 0;
+            times = document.getElementById('times');
+            p = document.getElementById('P')
+            ntimes = document.getElementById('ntimes');
+            text = times.innerHTML;
+            t = parseInt(text);
+            t = t + 1;
+            s = t.toString(2);
+            times.innerHTML = String(t);
+            //alert(colors[t%5] + t.toString())
+            if(t > 10){
+                alert("您已经点按太多次了")
+            }
+            else {
+                //alert(colors[t%5] + t.toString())
+                p.setAttribute('border','2px')
+                alert(p.getAttribute('id'))
+            }
+            ntimes.innerHTML = s
+        }
+        function over() {
+            document.write("在输入流之外使用了write，覆盖了所有内容")
+        }
+        function emailCheck(field,note) {
+            with (field){
+                if(value == '') {
+                    alert(note)
+                    return false;
+                }
+                else if (true){
+
+                }
+                else return true;
+            }
+        }
+        function formCheck(thisform) {
+            with (thisform){
+                return emailCheck(email,'邮件地址不能空！')
+            }
+
+        }
+    </script>
+    <button class="button" onclick="function out() {
+        times = document.getElementById('times');
+        times.innerHTML = String(times.innerHTML)+'1'
+    }">可以计算出按压次数
+    </button>
+    <button class="button" onclick="out()">可以计算出按压次数
+    </button>
+    <button onclick="over()">
+        在输入流之外使用write
+    </button>
+    <form  action="test2.html" onsubmit="formCheck(this)" method="post">
+        <input type="email" name="email"><br>
+        <input type="submit" name="submit" value="提交">
+    </form>
+</body>
+</html>
